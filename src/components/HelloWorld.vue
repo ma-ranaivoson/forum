@@ -63,10 +63,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-const test = 'hello';
-
-console.log('Hello');
-
 export default defineComponent({
   name: 'HelloWorld',
   props: {
