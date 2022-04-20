@@ -9,6 +9,8 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 'off',
+    // eslint-disable-next-line quote-props
+    'quotes': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-unused-vars': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
   },

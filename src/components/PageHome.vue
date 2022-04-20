@@ -3,7 +3,6 @@
     <h1>{{ thread.title }}</h1>
     <div class="post-list">
       <div class="post" v-for="postId in thread.posts" :key="postId">
-
         <div class="user-info">
           <a href="#" class="user-name">{{ userById(postById(postId).userId).name }}</a>
           <a href="#">
@@ -33,11 +32,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import sourceData from '@/data.json';
+import { defineComponent } from "vue";
+import sourceData from "@/data.json";
 
 export default defineComponent({
-  name: 'PageHome',
+  name: "PageHome",
   data() {
     return {
       threads: sourceData.threads,
