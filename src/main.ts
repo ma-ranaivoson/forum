@@ -3,12 +3,19 @@ import * as VueRouter from "vue-router";
 import App from "./App.vue";
 
 import PageHome from "./components/PageHome.vue";
+import PageThreadShow from "./components/PageThreadShow.vue";
 
 const routes = [
   {
-    path: '/',
+    path: "/",
     component: PageHome,
-    name: 'Home',
+    name: "Home",
+  },
+  {
+    path: "/thread/:id",
+    component: PageThreadShow,
+    name: "ThreadShow",
+    props: true,
   },
 ];
 
