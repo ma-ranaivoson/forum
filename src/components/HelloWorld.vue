@@ -57,16 +57,23 @@
         >
       </li>
     </ul>
+    {{ sourceData }}
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import sourceData from '@/data.json';
 
 export default defineComponent({
   name: 'HelloWorld',
   props: {
     msg: String,
+  },
+  data() {
+    return {
+      sourceData,
+    };
   },
 });
 </script>
