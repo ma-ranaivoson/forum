@@ -1,19 +1,19 @@
 import * as VueRouter from "vue-router";
 import sourceData from "@/data.json";
 
-import PageHome from "@/components/PageHome.vue";
-import PageThreadShow from "@/components/PageThreadShow.vue";
-import PageNotFound from "@/components/PageNotFound.vue";
+import Home from "@/pages/Home.vue";
+import ThreadShow from "@/pages/ThreadShow.vue";
+import NotFound from "@/pages/NotFound.vue";
 
 const routes = [
   {
     path: "/",
-    component: PageHome,
+    component: Home,
     name: "Home",
   },
   {
     path: "/thread/:id",
-    component: PageThreadShow,
+    component: ThreadShow,
     name: "ThreadShow",
     props: true,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -37,7 +37,7 @@ const routes = [
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
-    component: PageNotFound,
+    component: NotFound,
   },
 ];
 

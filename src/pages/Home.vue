@@ -9,7 +9,7 @@ import sourceData from "@/data.json";
 import ThreadList from "@/components/ThreadList.vue";
 
 export default defineComponent({
-  name: "PageHome",
+  name: "HomePage",
   data() {
     return {
       threads: sourceData.threads,
