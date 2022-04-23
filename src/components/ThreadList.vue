@@ -6,7 +6,9 @@
       <div v-for="thread in threads" :key="thread.id" class="thread">
         <div>
           <p>
-            <a href="#">{{ thread.title }}</a>
+            <router-link :to="{ name: 'ThreadShow', params: { id: thread.id } }">{{
+              thread.title
+            }}</router-link>
           </p>
           <p class="text-faded text-xsmall">
             By <a href="#">{{ userById(thread.userId).name }}</a
@@ -17,15 +19,11 @@
         <div class="activity">
           <p class="replies-count">{{ thread.posts.length }} replies</p>
 
-          <img
-            class="avatar-medium"
-            :src="userById(thread.userId).avatar"
-            alt="User avatar"
-          />
+          <img class="avatar-medium" :src="userById(thread.userId).avatar" alt="User avatar" />
 
           <div>
             <p class="text-xsmall">
-              <a href="#">{{userById(thread.userId).name}}</a>
+              <a href="#">{{ userById(thread.userId).name }}</a>
             </p>
             <p class="text-xsmall text-faded">{{ thread.publishedAt }}</p>
           </div>
