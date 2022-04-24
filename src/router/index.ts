@@ -5,7 +5,7 @@ import Home from "@/pages/Home.vue";
 import ThreadShow from "@/pages/ThreadShow.vue";
 import NotFound from "@/pages/NotFound.vue";
 
-const routes = [
+const routes: VueRouter.RouteRecordRaw[] = [
   {
     path: "/",
     component: Home,
