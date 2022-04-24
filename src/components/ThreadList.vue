@@ -36,12 +36,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import sourceData from "@/data.json";
+import { Thread } from "@/models/Threads";
 
 export default defineComponent({
   name: "ThreadList",
   props: {
     threads: {
-      type: Array,
+      type: Object as () => Thread[],
       required: true,
     },
   },
