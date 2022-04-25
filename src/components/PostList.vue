@@ -31,6 +31,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import sourceData from "@/data.json";
+import type { Post, Posts } from "@/models/Posts";
 
 export default defineComponent({
   name: "PostList",
@@ -41,14 +42,13 @@ export default defineComponent({
   },
   props: {
     posts: {
-      type: Array,
+      type: Object as () => Posts,
       required: true,
     },
   },
   methods: {
     postById(postId: string) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      return this.posts.find((p: any) => p.id === postId);
+      return this.posts.find((p: Post) => p.id === postId);
     },
     userById(userId: string) {
       return this.users.find((u) => u.id === userId);

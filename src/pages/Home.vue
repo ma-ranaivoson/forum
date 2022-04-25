@@ -7,12 +7,13 @@
 import { defineComponent } from "vue";
 import sourceData from "@/data.json";
 import ThreadList from "@/components/ThreadList.vue";
+import { Thread } from "@/models/Threads";
 
 export default defineComponent({
   name: "HomePage",
   data() {
     return {
-      threads: sourceData.threads,
+      threads: sourceData.threads as Thread[],
     };
   },
   components: {

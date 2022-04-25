@@ -13,7 +13,8 @@ import sourceData from "@/data.json";
 import PostList from "@/components/PostList.vue";
 import PostEditor from "@/components/PostEditor.vue";
 
-import { Post } from "@/models/Posts";
+import { Posts, Post } from "@/models/Posts";
+import { Threads, Thread } from "@/models/Threads";
 
 export default defineComponent({
   name: "ThreadShow",
@@ -25,8 +26,8 @@ export default defineComponent({
   },
   data() {
     return {
-      threads: sourceData.threads,
-      posts: sourceData.posts,
+      threads: sourceData.threads as Threads,
+      posts: sourceData.posts as Posts,
     };
   },
   components: {
@@ -35,10 +36,10 @@ export default defineComponent({
   },
   computed: {
     thread() {
-      return sourceData.threads.find((thread) => thread.id === this.id);
+      return sourceData.threads.find((thread) => thread.id === this.id) as Thread;
     },
     threadPosts() {
-      return this.posts.filter((post) => post.threadId === this.id);
+      return this.posts.filter((post) => post.threadId === this.id) as Posts;
     },
   },
   methods: {
