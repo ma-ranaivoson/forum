@@ -4,17 +4,24 @@ import sourceData from "@/data.json";
 import Home from "@/pages/Home.vue";
 import ThreadShow from "@/pages/ThreadShow.vue";
 import NotFound from "@/pages/NotFound.vue";
+import Forum from "@/pages/Forum.vue";
 
 const routes: VueRouter.RouteRecordRaw[] = [
   {
     path: "/",
-    component: Home,
     name: "Home",
+    component: Home,
+  },
+  {
+    path: "/forum/:id",
+    name: "ForumPage",
+    component: Forum,
+    props: true,
   },
   {
     path: "/thread/:id",
-    component: ThreadShow,
     name: "ThreadShow",
+    component: ThreadShow,
     props: true,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     beforeEnter(to: any, from: any, next: any) {
