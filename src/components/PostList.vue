@@ -32,7 +32,6 @@
 import { defineComponent } from "vue";
 import sourceData from "@/data.json";
 
-import AppDate from "@/components/AppDate.vue";
 import type { Post, Posts } from "@/models/Posts";
 
 export default defineComponent({
@@ -41,9 +40,6 @@ export default defineComponent({
     return {
       users: sourceData.users,
     };
-  },
-  components: {
-    AppDate,
   },
   props: {
     posts: {

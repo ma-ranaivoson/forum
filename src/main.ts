@@ -2,4 +2,9 @@ import { createApp } from "vue";
 import router from "./router";
 import App from "./App.vue";
 
-createApp(App).use(router).mount("#app");
+import AppDate from "./components/AppDate.vue";
+
+const app = createApp(App);
+app.use(router);
+app.component('AppDate', AppDate);
+app.mount("#app");
