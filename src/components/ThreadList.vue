@@ -12,7 +12,7 @@
           </p>
           <p class="text-faded text-xsmall">
             By <a href="#">{{ userById(thread.userId).name }}</a
-            >, {{ thread.publishedAt }}.
+            >, <app-date :timestamp="thread.publishedAt" />.
           </p>
         </div>
 
@@ -25,7 +25,7 @@
             <p class="text-xsmall">
               <a href="#">{{ userById(thread.userId).name }}</a>
             </p>
-            <p class="text-xsmall text-faded">{{ thread.publishedAt }}</p>
+            <p class="text-xsmall text-faded"><app-date :timestamp="thread.publishedAt" /></p>
           </div>
         </div>
       </div>
@@ -37,6 +37,7 @@
 import { defineComponent } from "vue";
 import sourceData from "@/data.json";
 import { Thread } from "@/models/Threads";
+import AppDate from "@/components/AppDate.vue";
 
 export default defineComponent({
   name: "ThreadList",
@@ -45,6 +46,9 @@ export default defineComponent({
       type: Object as () => Thread[],
       required: true,
     },
+  },
+  components: {
+    AppDate,
   },
   data() {
     return {
